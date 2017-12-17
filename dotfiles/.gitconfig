@@ -1,0 +1,10 @@
+[user]
+  name = Yuta Yamaguchi
+  email = yamaguchi7073xtt@gmail.com
+[core]
+  excludesfile = /Users/me/.gitignore
+  editor = vim
+[push]
+  default = simple
+[ghq]
+  root = /Users/me/go/src

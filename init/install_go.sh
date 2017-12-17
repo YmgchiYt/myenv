@@ -1,17 +1,22 @@
 #!/bin/bash 
 
-VERSION="1.9.2"
-OS="darwin"
-ARCH="amd64"
-SRC="go${VERSION}.${OS}-${ARCH}.tar.gz"
-URL="https://redirector.gvt1.com/edgedl/go/${SRC}"
+function install_go() (
+  VERSION="1.9.2"
+  OS="darwin"
+  ARCH="amd64"
+  SRC="go${VERSION}.${OS}-${ARCH}.tar.gz"
+  URL="https://redirector.gvt1.com/edgedl/go/${SRC}"
 
-echo "fetch ${URL}"
-curl -fsSLO ${URL}
+  echo "fetch ${URL}"
+  curl -fsSLO ${URL}
+  sudo tar -C /usr/local -xzf "${SRC}"
+  rm ${SRC}
+)
 
-sudo tar -C /usr/local -xzf "${SRC}"
 
-# add your shell profile
-# export PATH=${PATH}:/usr/local/go/bin
+function install_go_cmd() (
+  go get -u github.com/motemen/ghq
+)
 
-rm ${SRC}
+install_go
+install_go_cmd
