@@ -29,8 +29,7 @@ export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 # alias
 alias vim=gvim
 alias vi=vim
-alias makeifr="(LC_ALL='ja_JP.UTF-8' cd /Users/yutayamaguchi/ws/infra_document.d && make html)"
-alias makerep="(LC_ALL='ja_JP.UTF-8' cd /Users/yutayamaguchi/ws/work_report.d && make html)"
+alias makeifr="(LC_ALL='ja_JP.UTF-8' cd /Users/me/go/src/bitbucket.org/YmgchiYt/infra_documents && make html)"
 alias awk='gawk'
 
 # less
@@ -57,16 +56,10 @@ export PATH="${PATH}:${GOPATH}/bin"
 # MacTex
 export PATH="${PATH}:/Library/TeX/texbin"
 
-#sphinx用http server
-#lsof -i4TCP:8888 > /dev/null
-#if [ $? -ne 0 ]; then
-#  (cd "/Users/yutayamaguchi/ws/work_report.d/_build/html/" && python -m http.server 8888 > /dev/null 2>&1 & )
-#fi
-#
-#lsof -i4TCP:8889 > /dev/null
-#if [ $? -ne 0 ]; then
-#  (cd "/Users/yutayamaguchi/ws/infra_document.d/_build/html/" && python -m http.server 8889 > /dev/null 2>&1 &)
-#fi
+lsof -i4TCP:8888 > /dev/null
+if [ $? -ne 0 ]; then
+  (cd "/Users/me/go/src/bitbucket.org/YmgchiYt/infra_documents/_build/html/" && python3 -m http.server 8888 > /dev/null 2>&1 &)
+fi
 
 # git repository表示
 # copy from http://tkengo.github.io/blog/2013/05/12/zsh-vcs-info/

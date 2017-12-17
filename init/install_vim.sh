@@ -21,6 +21,7 @@ function install_dein() (
   mkdir -p ${dir}
   curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
   bash ./installer.sh ${dir}
+  rm ./installer.sh
 )
 
 function install_youcompleteme() (
@@ -34,8 +35,8 @@ function install_youcompleteme() (
   (cd ${dir}/YouCompleteMe && ./install.py --clang-completer --go-completer 
 )
 
-#install_vim
-#fetch_color_schema
-#install_dein
-#install_youcompleteme
+install_vim
+fetch_color_schema
+install_dein
+install_youcompleteme
 

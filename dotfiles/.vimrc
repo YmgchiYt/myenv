@@ -130,3 +130,5 @@ let g:closetag_close_shortcut = '<leader>>'
 "---------------------------------------------------
 
 filetype plugin on
+
+let macvim_skip_colorscheme=1
