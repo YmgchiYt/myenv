@@ -16,6 +16,8 @@ function install_go() (
 
 function install_go_cmd() (
   go get -u github.com/motemen/ghq
+  brew install dep
+  brew upgrade dep
 )
 
 install_go

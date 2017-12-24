@@ -9,5 +9,10 @@ function install_sphinx() (
   pip3 install sphinx_rtd_theme
 )
 
-#install_python3
+function install_awscli() (
+  pip3 install awscli
+)
+
+install_python3
 install_sphinx
+install_awscli

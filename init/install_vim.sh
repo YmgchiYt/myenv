@@ -28,7 +28,7 @@ function install_youcompleteme() (
   ln -s /usr/local/bin/mvim vim
   brew install cmake
   brew install node
-  dir=""
+  dir="/Users/me/.vim/bundles"
   mkdir -p ${dir}
   (cd ${dir}; git clone https://github.com/Valloric/YouCompleteMe.git)
   (cd ${dir}/YouCompleteMe && git submodule update --init --recursive)
@@ -39,4 +39,3 @@ install_vim
 fetch_color_schema
 install_dein
 install_youcompleteme
-

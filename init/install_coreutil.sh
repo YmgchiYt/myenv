@@ -5,6 +5,7 @@ function install_coreutils() (
   brew install gnu-sed --with-default-names
   brew install gawk
   brew install jq
+  brew install tree
 )
 
 install_coreutils

@@ -88,7 +88,8 @@ vnoremap : ;
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " 検索path
-set path+=/Users/me/go/src/github.com/**
+set path+=/Users/me/go/src/github.com/YmgchiYt/**
+set path+=/Users/me/go/src/bitbucket.org/YmgchiYt/**
 
 " Go
 let g:go_highlight_functions = 1
