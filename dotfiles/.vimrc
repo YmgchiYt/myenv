@@ -21,7 +21,14 @@ if dein#load_state('/Users/me/.vim/bundles')
   call dein#add('fatih/vim-go')
   call dein#add('junegunn/vim-easy-align')
   call dein#add('alvan/vim-closetag')
-  "call dein#add('Valloric/YouCompleteMe')
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('jiangmiao/auto-pairs')
+  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('zchee/deoplete-go', {'build': 'make'})
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
 
   " Required:
   call dein#end()
@@ -37,6 +44,10 @@ if dein#check_install()
 endif
 
 "End dein Scripts-------------------------
+  
+let g:deoplete#enable_at_startup = 1
+set completeopt+=noselect
+
 
 set nocompatible
 
@@ -84,6 +95,17 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
+nnoremap st <C-w>t
+
+nnoremap <silent><C-n> :NERDTreeToggle<CR>
 
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
@@ -103,12 +125,7 @@ let g:go_auto_type_info = 1
 " vim go
 let g:go_fmt_command = "goimports"
 
-" YCM
-let g:ycm_add_preview_to_complteopt = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_min_num_of_chars_for_completion = 2
-let g:ycm_auto_trigger = 1
+" set completeopt=menuone
 
 "---------------------------------------------------
 " filenames like *.xml, *.html, *.xhtml, ...
@@ -133,3 +150,5 @@ let g:closetag_close_shortcut = '<leader>>'
 filetype plugin on
 
 let macvim_skip_colorscheme=1
+
+let g:solarized_menu=0

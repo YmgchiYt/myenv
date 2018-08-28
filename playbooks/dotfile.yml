@@ -1,0 +1,40 @@
+---
+- name: put dot files
+  hosts: localhost
+  tasks:
+    - name: put .gitignore
+      copy:
+        src: "{{playbook_dir}}/../dotfiles/dotgitignore"
+        dest: "~/.gitignore"
+        mode: 0644
+        force: yes
+
+    - name: put .gitconfig
+      template:
+        src: "../dotfiles/dotgitconfig.j2"
+        dest: "~/.gitconfig"
+        mode: 0644
+      vars:
+        name: "{{lookup('env', 'GIT_USER_NAME')}}"
+        email: "{{lookup('env', 'GIT_USER_EMAIL')}}"
+        editor: "{{lookup('env', 'GIT_EDITOR')}}"
+        go_path: "{{lookup('env', 'GOPATH')}}"
+        github_name: "{{lookup('env', 'GITHUB_USER_NAME')}}"
+        github_oauth_token: "{{lookup('env', 'GITHUB_OUATH_TOKEN')}}"
+
+    - name: symlink .spacemacs
+      file:
+        src: "{{playbook_dir}}/../dotfiles/dotspacemacs"
+        path: "~/.spacemacs"
+        state: link
+        force: yes
+
+    - name: symlink .zshrc
+      file:
+        src: "{{playbook_dir}}/../dotfiles/dotzshrc"
+        path: "~/.zshrc"
+        state: link
+        force: yes
+           
+
+
