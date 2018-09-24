@@ -1,0 +1,22 @@
+# -*- mode: snippet -*-
+# name: table test
+# key: tabletest
+# --
+func TestXXX(t *testing.T) {
+     tests := []struct{
+           desc string
+           input string
+           wantError bool
+           want string
+           err error
+     }{
+      {},
+     }
+
+      for _, tt := range tests {
+          t.Run(tt.desc, func(t *testing.T) {
+
+
+          })
+      }
+}

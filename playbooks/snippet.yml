@@ -1,0 +1,8 @@
+---
+- name: put spacemacs snippets
+  hosts: localhost
+  tasks:
+    - name: put snippets
+      copy:
+        src: "{{playbook_dir}}/../files/snippets"
+        dest: "~/.emacs.d/private/"
