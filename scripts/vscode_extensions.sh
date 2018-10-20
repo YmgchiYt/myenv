@@ -12,5 +12,6 @@ EXTENSIONS=(
 )
 
 for extension in "${EXTENSIONS[@]}"; do
-    code --install-extension --force ${extension}
+    echo "install ${extension}"
+    code --install-extension ${extension}
 done
