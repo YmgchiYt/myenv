@@ -2,6 +2,7 @@
 
 EXTENSIONS=(
   "carolynvs.dep"
+  "James-Yu.latex-workshop"
   "joaoacdias.golang-tdd"
   "lextudio.restructuredtext"
   "mauve.terraform"
