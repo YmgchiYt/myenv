@@ -1,0 +1,19 @@
+---
+- name: configure vscode
+  hosts: localhost
+  vars:
+    vscode_dir: "~/Library/Application Support/Code/User"
+  tasks:
+    - name: symlink keybinding
+      file:
+        src: "{{playbook_dir}}/../vscode/keybindings.json"
+        path: "{{vscode_dir}}/keybindings.json"
+        state: link
+        force: yes
+
+    - name: symlink settings
+      file:
+        src: "{{playbook_dir}}/../vscode/settings.json"
+        path: "{{vscode_dir}}/settings.json"
+        state: link
+        force: yes

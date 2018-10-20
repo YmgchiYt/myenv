@@ -2,7 +2,8 @@
 # name: table test
 # key: tabletest
 # --
-func TestXXX(t *testing.T) {
+$0
+func Test(t *testing.T) {
      tests := []struct{
            desc string
            input string

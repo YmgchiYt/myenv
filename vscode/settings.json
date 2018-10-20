@@ -1,0 +1,59 @@
+{
+    // font
+    "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 12,
+    "editor.lineHeight": 14,
+
+    // coding
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.autoClosingBrackets": "beforeWhitespace",
+    "editor.hover.delay": 300,
+    "editor.tabCompletion": "on",
+
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.links": false,
+    "editor.wordWrap": "on",
+    "editor.minimap.enabled": false,
+    "editor.cursorBlinking": "solid", // 点滅させると煩わしい
+    "editor.suggest.localityBonus": true,
+
+    "diffEditor.renderSideBySide": false,
+
+    // vim
+    "vim.useSystemClipboard": true,
+    "vim.easymotion": true,
+    "vim.leader": "<space>",
+    "vim.useCtrlKeys": true,
+
+    // go
+    "go.autocompleteUnimportedPackages": true,
+    "go.coverOnTestPackage": false,
+    "go.formatTool": "goimports", // goreturnは使わない
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true
+    },
+
+    //rest
+    "[restructuredtext]": {
+        "editor.fontFamily": "Ricty, Menlo, Monaco, 'Courier New', monospace",
+        "editor.fontSize": 14,
+    },
+
+    "terminal.integrated.shell.osx": "/bin/zsh",
+
+    "telemetry.enableTelemetry": false, // dataを送信しない
+    "telemetry.enableCrashReporter": false,
+
+    "files.trimTrailingWhitespace": true,
+
+    // workbench
+    "workbench.colorTheme": "Solarized Dark",
+    "workbench.activityBar.visible": false,
+    // themeのcomponentsごとの設定
+    "workbench.colorCustomizations": {
+        // diffの追加箇所, 明るくてみずらかった
+        "diffEditor.insertedTextBackground": "#163800",
+    },
+    "window.zoomLevel": 0,
+}
