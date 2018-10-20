@@ -66,7 +66,7 @@
         "when": "terminalFocus"
     },
     {
-        "key": "cmd+`",
+        "key": "cmd+l",
         "command": "workbench.action.terminal.toggleTerminal"
     },
     {
