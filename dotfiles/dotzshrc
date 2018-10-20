@@ -31,7 +31,7 @@ export PATH=${PATH}:/usr/local/bin
 export PATH="/usr/local/opt/gnu-getopt/bin:${PATH}"
 
 # coreutils
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 
 # alias
@@ -112,10 +112,3 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
-
-# emacs
-export EDITOR=Emacs
-export PATH="/Applications/Emacs.app/Contents/MacOS:/Application/Emacs.app/Contents/MacOS/bin:${PATH}"
-
-# gtags
-export GTAGSCONF=/usr/local/share/gtags/gtags.conf
