@@ -48,12 +48,14 @@
         "editor.formatOnSave": true
     },
 
-    //rest
+    // rest
     "[restructuredtext]": {
         "editor.fontFamily": "Ricty, Menlo, Monaco, 'Courier New', monospace",
         "editor.fontSize": 14,
     },
 
+
+    // terminal
     "terminal.integrated.shell.osx": "/bin/zsh",
 
     "telemetry.enableTelemetry": false, // dataを送信しない
@@ -70,4 +72,51 @@
         "diffEditor.insertedTextBackground": "#163800",
     },
     "window.zoomLevel": 0,
+
+
+    // latex
+    "latex-workshop.latex.tools": [
+        {
+            "command": "platex",
+            "args": [
+                "-synctex=1",
+                "-jobname=\"%DOCFILE%\"",
+                "-kanji=utf8",
+                "-guess-input-enc",
+                "%DOCFILE%.tex"
+            ],
+            "name": "Step 1: platex"
+        },
+        {
+            "command": "platex",
+            "args": [
+                "-synctex=1",
+                "-jobname=\"%DOCFILE%\"",
+                "-kanji=utf8",
+                "-guess-input-enc",
+                "%DOCFILE%.tex"
+            ],
+            "name": "Step 2: platex"
+        },
+        {
+            "command": "dvipdfmx",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "name": "Step 3: dvipdfmx"
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "toolchain",
+            "tools": [
+                "Step 1: platex",
+                "Step 2: platex",
+                "Step 3: dvipdfmx",
+            ]
+        }
+    ],
+
+    "latex-workshop.view.pdf.viewer": "tab",
+    "editor.renderControlCharacters": true,
 }
