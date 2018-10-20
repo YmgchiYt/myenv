@@ -24,6 +24,20 @@
     "vim.easymotion": true,
     "vim.leader": "<space>",
     "vim.useCtrlKeys": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "c"],
+            "commands": [{"command": "workbench.action.showCommands"}]
+        },
+        {
+            "before": ["<leader>", "r"],
+            "commands": [{"command": "workbench.action.openRecent"}]
+        },
+        {
+            "before": ["<leader>", "s"],
+            "commands": [{"command": "workbench.action.gotoSymbol"}]
+        },
+    ],
 
     // go
     "go.autocompleteUnimportedPackages": true,
