@@ -22,6 +22,7 @@
     // vim
     "vim.useSystemClipboard": true,
     "vim.easymotion": true,
+    "vim.easymotionKeys": "hklyuiopnmqwertzxcvbasdgjf",
     "vim.leader": "<space>",
     "vim.useCtrlKeys": true,
     "vim.normalModeKeyBindingsNonRecursive": [
@@ -36,6 +37,32 @@
         {
             "before": ["<leader>", "s"],
             "commands": [{"command": "workbench.action.gotoSymbol"}]
+        },
+        // undo/redoはvscodeの機能を利用する
+        {
+            "before": ["u"],
+            "commands": [{"command": "undo" }]
+        },
+        {
+            "before": [ "<C-r>" ],
+            "commands": [{"command": "redo" }]
+        },
+        // indent
+        {
+            "before": [ ">" ],
+            "commands": [ "editor.action.indentLines" ]
+        },
+        {
+            "before": [ "<" ],
+            "commands": [ "editor.action.outdentLines" ]
+        },
+        {
+            "before": ["<leader>", "m"],
+             "commands": [ "bookmarks.toggle" ]
+        },
+        {
+            "before": ["<leader>", "b"],
+            "commands": [ "bookmarks.list" ]
         },
     ],
 
@@ -119,4 +146,38 @@
 
     "latex-workshop.view.pdf.viewer": "tab",
     "editor.renderControlCharacters": true,
+    "workbench.editor.enablePreview": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "extensions.ignoreRecommendations": false,
+
+    // spell check
+    "cSpell.enabledLanguageIds": [
+        "asciidoc",
+        "go",
+        "html",
+        "javascript",
+        "json",
+        "latex",
+        "markdown",
+        "plaintext",
+        "restructuredtext",
+        "text",
+        "yml"
+    ],
+    "cSpell.ignorePaths": [
+        "**/package-lock.json",
+        "**/node_modules/**",
+        "**/vscode-extension/**",
+        "**/.git/**",
+        ".vscode",
+        "typings",
+        "**/vendor/**"
+    ],
+    // http://takeai.silverpigeon.jp/code-spell-checker-for-visual-studio-code-green-underline-japanese/
+    "cSpell.ignoreRegExpList": [
+        "[ａ-ｚぁ-んァ-ヶ亜-熙纊-黑]+"
+    ],
+    "cSpell.languageSettings": [
+        { "languageId": "go",     "allowCompoundWords": true,  "dictionaries": ["go"] },
+    ],
 }
