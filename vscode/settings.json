@@ -171,13 +171,25 @@
         "**/.git/**",
         ".vscode",
         "typings",
-        "**/vendor/**"
+        "**/vendor/**",
     ],
     // http://takeai.silverpigeon.jp/code-spell-checker-for-visual-studio-code-green-underline-japanese/
     "cSpell.ignoreRegExpList": [
         "[ａ-ｚぁ-んァ-ヶ亜-熙纊-黑]+"
     ],
     "cSpell.languageSettings": [
-        { "languageId": "go",     "allowCompoundWords": true,  "dictionaries": ["go"] },
+        { "languageId": "go",
+            "allowCompoundWords": true,
+            "dictionaries": ["go"]
+        },
     ],
+    "window.title": "${activeEditorLong}",
+
+    // Allow navigation look for bookmarks in all files in the project, instead of only the current
+    "bookmarks.navigateThroughAllFiles": true,
+    "cSpell.userWords": [
+        "isomorphicgo"
+    ],
+
+    "files.associations": {"*.tmpl": "html"},
 }
