@@ -16,6 +16,7 @@
     "editor.minimap.enabled": false,
     "editor.cursorBlinking": "solid", // 点滅させると煩わしい
     "editor.suggest.localityBonus": true,
+    "editor.parameterHints.enabled": false,
 
     "diffEditor.renderSideBySide": false,
 
@@ -69,10 +70,21 @@
     // go
     "go.autocompleteUnimportedPackages": true,
     "go.coverOnTestPackage": false,
-    "go.formatTool": "goimports", // goreturnは使わない
+    "go.formatTool": "goimports", //gofmt, goimports, goreturns, goformat
+    "go.formatFlags": ["-w"],
+    "go.installDependenciesWhenBuilding": false,
+    "go.inferGopath": true,
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": [
+        "--fast"
+    ],
+    "go.toolsEnvVars": {
+        "GO111MODULE": "auto",
+    },
     "[go]": {
         "editor.insertSpaces": false,
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveTimeout": 30000, // timeoutするとimportされない
     },
 
     // rest
@@ -81,6 +93,13 @@
         "editor.fontSize": 14,
     },
 
+    // html
+    "[html]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true,
+        "editor.detectIndentation": false,
+    },
 
     // terminal
     "terminal.integrated.shell.osx": "/bin/zsh",
@@ -160,7 +179,6 @@
         "latex",
         "markdown",
         "plaintext",
-        "restructuredtext",
         "text",
         "yml"
     ],
@@ -172,6 +190,7 @@
         ".vscode",
         "typings",
         "**/vendor/**",
+        "/usr/local/go/**",
     ],
     // http://takeai.silverpigeon.jp/code-spell-checker-for-visual-studio-code-green-underline-japanese/
     "cSpell.ignoreRegExpList": [
@@ -188,8 +207,34 @@
     // Allow navigation look for bookmarks in all files in the project, instead of only the current
     "bookmarks.navigateThroughAllFiles": true,
     "cSpell.userWords": [
-        "isomorphicgo"
+        "backend",
+        "codeconv",
+        "cognito",
+        "csrf",
+        "dotenv",
+        "firestore",
+        "gopherjs",
+        "grpc",
+        "handson",
+        "hpdev",
+        "isomorphicgo",
+        "julienschmidt",
+        "logrus",
+        "negroni",
+        "noindex",
+        "notificator",
+        "oauth",
+        "payload",
+        "repls",
+        "token",
+        "unregister",
+        "upgrader",
+        "ymgyt"
     ],
 
-    "files.associations": {"*.tmpl": "html"},
+    "files.associations": {
+        "*.tmpl": "html"
+    },
+    // gitignore対象を検索対象からはずす
+    "search.useGlobalIgnoreFiles": true,
 }

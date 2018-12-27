@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 
 function install_go() (
   VERSION="1.11"

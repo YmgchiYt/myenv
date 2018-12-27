@@ -38,6 +38,7 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 alias awk='gawk'
 alias g=git
 alias tf=terraform
+alias k=kubectl
 
 # less
 #-W移動した際のハイライト, -M ファイル名, -S折り返さない, -RASCII解釈, -g検索時の反転を現在行のみに
@@ -112,3 +113,6 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
+
+#kubectl
+if which kubectl > /dev/null; then source <(kubectl completion zsh); fi

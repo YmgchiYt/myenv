@@ -84,11 +84,6 @@
         "when": "textCompareEditorVisible"
     },
     {
-        // spell checkerのdicに追加. word上で実行する
-        "key": "cmd+s cmd+a",
-        "command": "cSpell.addWordToDictionary"
-    },
-    {
         "key": "ctrl+cmd+space",
         "command": "editor.action.triggerParameterHints",
         "when": "editorHasSignatureHelpProvider && editorTextFocus"
@@ -111,5 +106,19 @@
     {
         "key": "ctrl+cmd+`",
         "command": "workbench.action.terminal.focusNext"
+    },
+    {
+        "key": "cmd+s cmd+a",
+        "command": "cSpell.addWordToUserDictionary"
+    },
+    {
+        "key": "cmd+d cmd+i",
+        "command": "editor.action.goToImplementation",
+        "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "cmd+f12",
+        "command": "-editor.action.goToImplementation",
+        "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
     },
 ]
