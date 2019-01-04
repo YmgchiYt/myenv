@@ -70,21 +70,32 @@
     // go
     "go.autocompleteUnimportedPackages": true,
     "go.coverOnTestPackage": false,
-    "go.formatTool": "goimports", //gofmt, goimports, goreturns, goformat
+    "go.formatTool": "gofmt", //gofmt, goimports, goreturns, goformat, goimportsはmodule下で利用できない?
     "go.formatFlags": ["-w"],
     "go.installDependenciesWhenBuilding": false,
     "go.inferGopath": true,
     "go.lintTool": "golangci-lint",
     "go.lintFlags": [
-        "--fast"
+        "--enable=misspell",
+        "--fast",
     ],
     "go.toolsEnvVars": {
-        "GO111MODULE": "auto",
+        "GO111MODULE": "on",
     },
     "[go]": {
         "editor.insertSpaces": false,
         "editor.formatOnSave": true,
         "editor.formatOnSaveTimeout": 30000, // timeoutするとimportされない
+    },
+
+    // experimental
+    "go.useLanguageServer": true,
+    "go.alternateTools": {
+        "go-langserver": "golsp",  // "bingo"
+    },
+    "go.languageServerExperimentalFeatures": {
+        "format": true,
+        "autoComplete": true
     },
 
     // rest
@@ -170,6 +181,7 @@
     "extensions.ignoreRecommendations": false,
 
     // spell check
+    "cSpell.enabled": false,
     "cSpell.enabledLanguageIds": [
         "asciidoc",
         "go",
@@ -191,6 +203,7 @@
         "typings",
         "**/vendor/**",
         "/usr/local/go/**",
+        ".envrc",
     ],
     // http://takeai.silverpigeon.jp/code-spell-checker-for-visual-studio-code-green-underline-japanese/
     "cSpell.ignoreRegExpList": [
@@ -211,21 +224,30 @@
         "codeconv",
         "cognito",
         "csrf",
+        "davecgh",
+        "deps",
         "dotenv",
+        "fdump",
         "firestore",
+        "gobot",
         "gopherjs",
         "grpc",
         "handson",
         "hpdev",
         "isomorphicgo",
         "julienschmidt",
+        "kuberetes",
         "logrus",
+        "name",
         "negroni",
+        "nlopes",
         "noindex",
         "notificator",
         "oauth",
         "payload",
         "repls",
+        "repo",
+        "sdump",
         "token",
         "unregister",
         "upgrader",
