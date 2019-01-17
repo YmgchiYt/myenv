@@ -63,9 +63,14 @@ export LESSCHARSET=utf-8
 
 
 #pyenv
-#export PYENV_ROOT="$HOME/.pyenv"
-#export PATH="$PYENV_ROOT/bin:$PATH"
-#eval "$(pyenv init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="${PYENV_ROOT}/bin:$PATH"
+eval "$(pyenv init -)"
+
+# conda activateするために必要らしい
+# https://github.com/conda/conda/blob/a4c4feae404b2b378e106bd25f62cc8be15c768f/CHANGELOG.md#440-2017-12-20
+. $(pyenv root)/versions/anaconda3-5.2.0/etc/profile.d/conda.sh
+
 
 # direnv
 # https://github.com/direnv/direnv

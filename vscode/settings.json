@@ -70,10 +70,10 @@
     // go
     "go.autocompleteUnimportedPackages": true,
     "go.coverOnTestPackage": false,
-    "go.formatTool": "gofmt", //gofmt, goimports, goreturns, goformat, goimportsはmodule下で利用できない?
+    "go.formatTool": "goimports", //gofmt, goimports, goreturns, goformat, goimportsはmodule下で利用できない?
     "go.formatFlags": ["-w"],
     "go.installDependenciesWhenBuilding": false,
-    "go.inferGopath": true,
+    "go.inferGopath": false,
     "go.lintTool": "golangci-lint",
     "go.lintFlags": [
         "--enable=misspell",
@@ -91,12 +91,18 @@
     // experimental
     "go.useLanguageServer": true,
     "go.alternateTools": {
-        "go-langserver": "golsp",  // "bingo"
+        "go-langserver": "bingo",  // bingo, golsp
     },
     "go.languageServerExperimentalFeatures": {
         "format": true,
         "autoComplete": true
     },
+    "go.languageServerFlags": [
+        "-format-style", "goimports", // goimports, gofmt
+        "-logfile", "/tmp/bingo.log",
+        "-trace",
+        // "-enable-global-cache", // go.modを更新しないとcacheは新しくならない
+    ],
 
     // rest
     "[restructuredtext]": {
