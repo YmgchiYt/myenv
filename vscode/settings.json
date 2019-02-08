@@ -78,6 +78,8 @@
     "go.lintFlags": [
         "--enable=misspell",
         "--fast",
+        "--tests", // exporter関連でtestもみないとunused扱いされる
+        "--disable=scopelint",  // testのtc参照だけ見逃してほしい
     ],
     "go.toolsEnvVars": {
         "GO111MODULE": "on",
@@ -99,8 +101,8 @@
     },
     "go.languageServerFlags": [
         "-format-style", "goimports", // goimports, gofmt
-        "-logfile", "/tmp/bingo.log",
-        "-trace",
+        // "-logfile", "/tmp/bingo.log",
+        // "-trace",
         // "-enable-global-cache", // go.modを更新しないとcacheは新しくならない
     ],
 
