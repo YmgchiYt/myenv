@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function install_go() (
-  VERSION="1.11"
+  VERSION="1.11.5"
   OS="darwin"
   ARCH="amd64"
   SRC="go${VERSION}.${OS}-${ARCH}.tar.gz"

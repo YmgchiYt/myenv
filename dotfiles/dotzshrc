@@ -51,7 +51,7 @@ MANPATH=/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}
 export LESSCHARSET=utf-8
 
 # rbenv
-# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # nvm
 # export NVM_DIR="$HOME/.nvm"
@@ -121,3 +121,6 @@ bindkey '^r' peco-select-history
 
 #kubectl
 if which kubectl > /dev/null; then source <(kubectl completion zsh); fi
+
+# rust
+export PATH="${PATH}:${HOME}/.cargo/bin"

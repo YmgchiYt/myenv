@@ -82,10 +82,12 @@
         "--disable=scopelint",  // testのtc参照だけ見逃してほしい
     ],
     "go.toolsEnvVars": {
-        "GO111MODULE": "on",
+        // "GO111MODULE": "auto",
     },
     "[go]": {
         "editor.insertSpaces": false,
+        "editor.tabSize": 4,
+        "editor.detectIndentation": false,  // templateやsqlのindent次第で時々2になることを防ぐ
         "editor.formatOnSave": true,
         "editor.formatOnSaveTimeout": 30000, // timeoutするとimportされない
     },
@@ -101,10 +103,14 @@
     },
     "go.languageServerFlags": [
         "-format-style", "goimports", // goimports, gofmt
-        // "-logfile", "/tmp/bingo.log",
+        "-logfile", "/tmp/bingo.log",
+        "--cache-style=none",  // https://github.com/saibing/bingo/issues/104
         // "-trace",
         // "-enable-global-cache", // go.modを更新しないとcacheは新しくならない
     ],
+
+    // python
+    "python.pythonPath": "~/.pyenv/shims/python",
 
     // rest
     "[restructuredtext]": {
@@ -225,8 +231,6 @@
     ],
     "window.title": "${activeEditorLong}",
 
-    // Allow navigation look for bookmarks in all files in the project, instead of only the current
-    "bookmarks.navigateThroughAllFiles": true,
     "cSpell.userWords": [
         "backend",
         "codeconv",
@@ -267,4 +271,5 @@
     },
     // gitignore対象を検索対象からはずす
     "search.useGlobalIgnoreFiles": true,
+    "search.location": "panel",
 }
