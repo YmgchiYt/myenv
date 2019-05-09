@@ -3,13 +3,11 @@
     "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 12,
     "editor.lineHeight": 14,
-
     // coding
     "editor.acceptSuggestionOnEnter": "off",
     "editor.autoClosingBrackets": "beforeWhitespace",
     "editor.hover.delay": 300,
     "editor.tabCompletion": "on",
-
     "editor.copyWithSyntaxHighlighting": false,
     "editor.links": false,
     "editor.wordWrap": "on",
@@ -17,9 +15,7 @@
     "editor.cursorBlinking": "solid", // 点滅させると煩わしい
     "editor.suggest.localityBonus": true,
     "editor.parameterHints.enabled": false,
-
     "diffEditor.renderSideBySide": false,
-
     // vim
     "vim.useSystemClipboard": true,
     "vim.easymotion": true,
@@ -28,50 +24,102 @@
     "vim.useCtrlKeys": true,
     "vim.normalModeKeyBindingsNonRecursive": [
         {
-            "before": ["<leader>", "c"],
-            "commands": [{"command": "workbench.action.showCommands"}]
+            "before": [
+                "<leader>",
+                "c"
+            ],
+            "commands": [
+                {
+                    "command": "workbench.action.showCommands"
+                }
+            ]
         },
         {
-            "before": ["<leader>", "r"],
-            "commands": [{"command": "workbench.action.openRecent"}]
+            "before": [
+                "<leader>",
+                "r"
+            ],
+            "commands": [
+                {
+                    "command": "workbench.action.openRecent"
+                }
+            ]
         },
         {
-            "before": ["<leader>", "s"],
-            "commands": [{"command": "workbench.action.gotoSymbol"}]
+            "before": [
+                "<leader>",
+                "s"
+            ],
+            "commands": [
+                {
+                    "command": "workbench.action.gotoSymbol"
+                }
+            ]
         },
         // undo/redoはvscodeの機能を利用する
         {
-            "before": ["u"],
-            "commands": [{"command": "undo" }]
+            "before": [
+                "u"
+            ],
+            "commands": [
+                {
+                    "command": "undo"
+                }
+            ]
         },
         {
-            "before": [ "<C-r>" ],
-            "commands": [{"command": "redo" }]
+            "before": [
+                "<C-r>"
+            ],
+            "commands": [
+                {
+                    "command": "redo"
+                }
+            ]
         },
         // indent
         {
-            "before": [ ">" ],
-            "commands": [ "editor.action.indentLines" ]
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
         },
         {
-            "before": [ "<" ],
-            "commands": [ "editor.action.outdentLines" ]
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
         },
         {
-            "before": ["<leader>", "m"],
-             "commands": [ "bookmarks.toggle" ]
+            "before": [
+                "<leader>",
+                "m"
+            ],
+            "commands": [
+                "bookmarks.toggle"
+            ]
         },
         {
-            "before": ["<leader>", "b"],
-            "commands": [ "bookmarks.list" ]
+            "before": [
+                "<leader>",
+                "b"
+            ],
+            "commands": [
+                "bookmarks.list"
+            ]
         },
     ],
-
     // go
     "go.autocompleteUnimportedPackages": true,
     "go.coverOnTestPackage": false,
     "go.formatTool": "goimports", //gofmt, goimports, goreturns, goformat, goimportsはmodule下で利用できない?
-    "go.formatFlags": ["-w"],
+    "go.formatFlags": [
+        "-w"
+    ],
     "go.installDependenciesWhenBuilding": false,
     "go.inferGopath": false,
     "go.lintTool": "golangci-lint",
@@ -79,7 +127,7 @@
         "--enable=misspell",
         "--fast",
         "--tests", // exporter関連でtestもみないとunused扱いされる
-        "--disable=scopelint",  // testのtc参照だけ見逃してほしい
+        "--disable=scopelint", // testのtc参照だけ見逃してほしい
     ],
     "go.toolsEnvVars": {
         // "GO111MODULE": "auto",
@@ -87,37 +135,45 @@
     "[go]": {
         "editor.insertSpaces": false,
         "editor.tabSize": 4,
-        "editor.detectIndentation": false,  // templateやsqlのindent次第で時々2になることを防ぐ
+        "editor.detectIndentation": false, // templateやsqlのindent次第で時々2になることを防ぐ
         "editor.formatOnSave": true,
         "editor.formatOnSaveTimeout": 30000, // timeoutするとimportされない
     },
-
     // experimental
     "go.useLanguageServer": true,
     "go.alternateTools": {
-        "go-langserver": "bingo",  // bingo, golsp
+        "go-langserver": "bingo", // bingo, golsp
     },
     "go.languageServerExperimentalFeatures": {
         "format": true,
         "autoComplete": true
     },
     "go.languageServerFlags": [
-        "-format-style", "goimports", // goimports, gofmt
-        "-logfile", "/tmp/bingo.log",
-        "--cache-style=none",  // https://github.com/saibing/bingo/issues/104
+        "-format-style",
+        "goimports", // goimports, gofmt
+        "-logfile",
+        "/tmp/bingo.log",
+        "--cache-style=none", // https://github.com/saibing/bingo/issues/104
         // "-trace",
         // "-enable-global-cache", // go.modを更新しないとcacheは新しくならない
     ],
-
+    // rust
+    "[rust]": {
+        // 効かない?
+        "editor.formatOnSave": true
+    },
+    "editor.formatOnSave": true,
+    "rust-client.channel": "nightly",
     // python
     "python.pythonPath": "~/.pyenv/shims/python",
-
     // rest
     "[restructuredtext]": {
         "editor.fontFamily": "Ricty, Menlo, Monaco, 'Courier New', monospace",
         "editor.fontSize": 14,
     },
-
+    "restructuredtext.linter.extraArgs": [
+        "--ignore D001"
+    ],
     // html
     "[html]": {
         "editor.insertSpaces": true,
@@ -125,15 +181,11 @@
         "editor.formatOnSave": true,
         "editor.detectIndentation": false,
     },
-
     // terminal
     "terminal.integrated.shell.osx": "/bin/zsh",
-
     "telemetry.enableTelemetry": false, // dataを送信しない
     "telemetry.enableCrashReporter": false,
-
     "files.trimTrailingWhitespace": true,
-
     // workbench
     "workbench.colorTheme": "Solarized Dark",
     "workbench.activityBar.visible": false,
@@ -143,8 +195,6 @@
         "diffEditor.insertedTextBackground": "#163800",
     },
     "window.zoomLevel": 0,
-
-
     // latex
     "latex-workshop.latex.tools": [
         {
@@ -187,13 +237,11 @@
             ]
         }
     ],
-
     "latex-workshop.view.pdf.viewer": "tab",
     "editor.renderControlCharacters": true,
     "workbench.editor.enablePreview": false,
     "workbench.startupEditor": "newUntitledFile",
     "extensions.ignoreRecommendations": false,
-
     // spell check
     "cSpell.enabled": false,
     "cSpell.enabledLanguageIds": [
@@ -224,13 +272,15 @@
         "[ａ-ｚぁ-んァ-ヶ亜-熙纊-黑]+"
     ],
     "cSpell.languageSettings": [
-        { "languageId": "go",
+        {
+            "languageId": "go",
             "allowCompoundWords": true,
-            "dictionaries": ["go"]
+            "dictionaries": [
+                "go"
+            ]
         },
     ],
     "window.title": "${activeEditorLong}",
-
     "cSpell.userWords": [
         "backend",
         "codeconv",
@@ -265,7 +315,6 @@
         "upgrader",
         "ymgyt"
     ],
-
     "files.associations": {
         "*.tmpl": "html"
     },
