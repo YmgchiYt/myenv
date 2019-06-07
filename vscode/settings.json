@@ -172,7 +172,8 @@
         "editor.fontSize": 14,
     },
     "restructuredtext.linter.extraArgs": [
-        "--ignore D001"
+        "--ignore D001",
+        "--ignore D003" // tab indent(go code bolock use hard tab for indentation)
     ],
     // html
     "[html]": {
