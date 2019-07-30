@@ -151,9 +151,9 @@
     "go.languageServerFlags": [
         "-format-style",
         "goimports", // goimports, gofmt
-        "-logfile",
-        "/tmp/bingo.log",
-        "--cache-style=none", // https://github.com/saibing/bingo/issues/104
+        // "-logfile",
+        // "/tmp/bingo.log",
+        "--cache-style=on-demand", // none|on-demand|always https://github.com/saibing/bingo/issues/104
         // "-trace",
         // "-enable-global-cache", // go.modを更新しないとcacheは新しくならない
     ],
@@ -163,7 +163,8 @@
         "editor.formatOnSave": true
     },
     "editor.formatOnSave": true,
-    "rust-client.channel": "nightly",
+    "rust-client.channel": "stable",
+    "rust-client.rustupPath": "/Users/yuta.yamaguchi/.cargo/bin/rustup",
     // python
     "python.pythonPath": "~/.pyenv/shims/python",
     // rest

@@ -111,6 +111,20 @@ zle -N peco-src
 stty -ixon
 bindkey '^s' peco-src
 
+# try
+function peco-howtv() {
+    local selected_dir=$(ls ~/howtv | peco --query "$LBUFFER")
+    if [ -n "$selected_dir" ]; then
+        BUFFER="cd ~/howtv/${selected_dir}"
+        zle accept-line
+    fi
+    zle redisplay
+}
+zle -N peco-howtv
+stty -ixon
+bindkey '^h' peco-howtv
+# try
+
 function peco-select-history() {
     BUFFER=$(fc -l -r -n 1 | peco --query "$LBUFFER")
     CURSOR=$#BUFFER
