@@ -1,6 +1,6 @@
 {
     // font
-    "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "Ricty, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 12,
     "editor.lineHeight": 14,
     // coding
@@ -132,31 +132,46 @@
     "go.toolsEnvVars": {
         // "GO111MODULE": "auto",
     },
+    // gopls
+    // see https://github.com/golang/tools/blob/master/gopls/doc/vscode.md
     "[go]": {
+        "editor.snippetSuggestions": "none",
         "editor.insertSpaces": false,
         "editor.tabSize": 4,
         "editor.detectIndentation": false, // templateやsqlのindent次第で時々2になることを防ぐ
         "editor.formatOnSave": true,
         "editor.formatOnSaveTimeout": 30000, // timeoutするとimportされない
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+        "editor.codeActionsOnSaveTimeout": 3000
     },
     // experimental
     "go.useLanguageServer": true,
-    "go.alternateTools": {
-        "go-langserver": "bingo", // bingo, golsp
+    "gopls": {
+        "usePlaceholders": true, // add parameter placeholders when completing a function
+        // Experimental settings
+        "completeUnimported": true, // autocomplete unimported packages
+        "watchFileChanges": true, // watch file changes outside of the editor
+        "deepCompletion": true, // enable deep completion
     },
-    "go.languageServerExperimentalFeatures": {
-        "format": true,
-        "autoComplete": true
-    },
-    "go.languageServerFlags": [
-        "-format-style",
-        "goimports", // goimports, gofmt
-        // "-logfile",
-        // "/tmp/bingo.log",
-        "--cache-style=on-demand", // none|on-demand|always https://github.com/saibing/bingo/issues/104
-        // "-trace",
-        // "-enable-global-cache", // go.modを更新しないとcacheは新しくならない
-    ],
+    "files.eol": "\n", // formatting only supports LF line endings
+    // "go.alternateTools": {
+    //     "go-langserver": "bingo", // bingo, golsp
+    // },
+    // "go.languageServerExperimentalFeatures": {
+    //     "format": true,
+    //     "autoComplete": true
+    // },
+    // "go.languageServerFlags": [
+    //     "-format-style",
+    //     "goimports", // goimports, gofmt
+    //     // "-logfile",
+    //     // "/tmp/bingo.log",
+    //     "--cache-style=on-demand", // none|on-demand|always https://github.com/saibing/bingo/issues/104
+    //     // "-trace",
+    //     // "-enable-global-cache", // go.modを更新しないとcacheは新しくならない
+    // ],
     // rust
     "[rust]": {
         // 効かない?
@@ -164,7 +179,7 @@
     },
     "editor.formatOnSave": true,
     "rust-client.channel": "stable",
-    "rust-client.rustupPath": "/Users/yuta.yamaguchi/.cargo/bin/rustup",
+    "rust-client.rustupPath": "/Users/ymgyt/.cargo/bin/rustup",
     // python
     "python.pythonPath": "~/.pyenv/shims/python",
     // rest

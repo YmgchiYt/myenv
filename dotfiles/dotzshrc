@@ -112,17 +112,17 @@ stty -ixon
 bindkey '^s' peco-src
 
 # try
-function peco-howtv() {
-    local selected_dir=$(ls ~/howtv | peco --query "$LBUFFER")
+function peco-hacobu() {
+    local selected_dir=$(ls ~/hacobu | peco --query "$LBUFFER")
     if [ -n "$selected_dir" ]; then
-        BUFFER="cd ~/howtv/${selected_dir}"
+        BUFFER="cd ~/hacobu/${selected_dir}"
         zle accept-line
     fi
     zle redisplay
 }
-zle -N peco-howtv
+zle -N peco-hacobu
 stty -ixon
-bindkey '^h' peco-howtv
+bindkey '^h' peco-hacobu
 # try
 
 function peco-select-history() {
@@ -138,3 +138,4 @@ if which kubectl > /dev/null; then source <(kubectl completion zsh); fi
 
 # rust
 export PATH="${PATH}:${HOME}/.cargo/bin"
+source <(kubectl completion zsh)
