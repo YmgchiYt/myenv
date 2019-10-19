@@ -100,7 +100,7 @@ RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
 # pecoとの連携
 function peco-src() {
-    local selected_dir=$(ghq list | peco --query "$LBUFFER")
+    local selected_dir=$(ls ${GOPATH}/src| peco --query "$LBUFFER")
     if [ -n "$selected_dir" ]; then
         BUFFER="cd ${GOPATH}/src/${selected_dir}"
         zle accept-line
