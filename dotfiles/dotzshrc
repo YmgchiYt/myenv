@@ -39,6 +39,9 @@ alias awk='gawk'
 alias g=git
 alias tf=terraform
 alias k=kubectl
+alias t=task
+alias r='go run internal/main.go'
+alias w='watchexec -e go -r -v go run internal/main.go'
 
 # less
 #-W移動した際のハイライト, -M ファイル名, -S折り返さない, -RASCII解釈, -g検索時の反転を現在行のみに
@@ -100,7 +103,7 @@ RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
 # pecoとの連携
 function peco-src() {
-    local selected_dir=$(ls ${GOPATH}/src| peco --query "$LBUFFER")
+    local selected_dir=$(ghq list | peco --query "$LBUFFER")
     if [ -n "$selected_dir" ]; then
         BUFFER="cd ${GOPATH}/src/${selected_dir}"
         zle accept-line
