@@ -156,6 +156,17 @@
         "deepCompletion": true, // enable deep completion
     },
     "files.eol": "\n", // formatting only supports LF line endings
+    "go.delveConfig": {
+        "dlvLoadConfig": {
+            "followPointers": true,
+            "maxVariableRecurse": 1,
+            "maxStringLen": 64,
+            "maxArrayValues": 64,
+            "maxStructFields": -1
+        },
+        "apiVersion": 2,
+        "showGlobalVariables": true
+    },
     // "go.alternateTools": {
     //     "go-langserver": "bingo", // bingo, golsp
     // },
@@ -323,12 +334,14 @@
         "handson",
         "howtv",
         "hpdev",
+        "iaddress",
         "icustomer",
         "idriver",
         "isomorphicgo",
         "julienschmidt",
         "kuberetes",
         "logrus",
+        "movo",
         "name",
         "negroni",
         "nlopes",
@@ -341,6 +354,7 @@
         "repls",
         "repo",
         "sdump",
+        "tmpl",
         "token",
         "unparam",
         "unregister",
